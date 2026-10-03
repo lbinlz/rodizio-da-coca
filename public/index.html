@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rodízio da Coca-Cola</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <div>
+                <h1>🥤 Rodízio da Coca-Cola</h1>
+                <p>Controle de quem paga a Coca no almoço</p>
+            </div>
+
+            <a href="/pessoas" class="botao-menu">
+                <span>👥</span> Participantes
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="destaque">
+
+            <span class="etiqueta">RODÍZIO DO ALMOÇO</span>
+
+            <h2>Quem paga a próxima Coca?</h2>
+
+            <h1 id="proximo">Carregando...</h1>
+
+            <button type="button"
+                class="botao-principal"
+                onclick="registrarPagamento()">
+                ✓ Confirmar pagamento
+            </button>
+
+            <div class="pagamento-manual">
+
+                <h3>Alguém pagou fora da ordem?</h3>
+
+                <p>Selecione quem realmente realizou o pagamento.</p>
+
+                <select id="participanteManual">
+                    <option value="">Selecione quem pagou</option>
+                </select>
+
+                <button type="button"
+                    class="botao-secundario"
+                    onclick="registrarPagamentoManual()">
+                    Confirmar pagamento manual
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="participantes">
+
+            <div class="titulo-secao">
+                <h2>👥 Participantes</h2>
+                <span class="subtitulo">Pessoas cadastradas no rodízio</span>
+            </div>
+
+            <div id="lista"></div>
+
+            <a href="/pessoas" class="link-participantes">
+                Gerenciar participantes →
+            </a>
+
+        </section>
+
+        <section class="historico">
+
+            <div class="titulo-secao">
+                <h2>📋 Histórico de pagamentos</h2>
+                <span class="subtitulo">Acompanhe os pagamentos registrados</span>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Participante</th>
+                            <th>Data</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historico">
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>🥤 Rodízio da Coca-Cola © 2026</p>
+        <span>Controle de pagamentos do almoço</span>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

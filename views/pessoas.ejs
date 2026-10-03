@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lista de Pessoas</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<header class="topo">
+     <div class="topo-conteudo">
+         <h1>🥤 Rodízio da Coca-Cola</h1>
+         <p>Gerenciamento de participantes</p>
+     </div> 
+</header>
+    
+
+    <main>
+
+        <section>
+            <h2>Cadastrar pessoa</h2>
+
+            <form action="/pessoas/adicionar" method="POST"
+                  class="formulario">
+
+                <input
+                    type="text"
+                    name="nome"
+                    placeholder="Digite o nome da pessoa"
+                    required
+                >
+<button type="submit" class="btn-adicionar">Adicionar pessoa</button>
+                
+
+            </form>
+        </section>
+
+        <section>
+
+            <h2>Pessoas cadastradas</h2>
+
+            <p>Total de participantes: <strong><%= pessoas.length %></strong></p>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% if (pessoas.length > 0) { %>
+
+                        <% pessoas.forEach(pessoa => { %>
+
+                            <tr>
+                                <td><%= pessoa.id %></td>
+                                <td><%= pessoa.nome %></td>
+                            </tr>
+
+                        <% }) %>
+
+                    <% } else { %>
+
+                        <tr>
+                            <td colspan="2">
+                                Nenhuma pessoa cadastrada.
+                            </td>
+                        </tr>
+
+                    <% } %>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section>
+            <a href="/" class="voltar">
+                Voltar para o início
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Rodízio da Coca-Cola © 2026</p>
+    </footer>
+
+</body>
+</html>
